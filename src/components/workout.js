@@ -5,7 +5,7 @@ function Workout() {
 
     return (
         <div className='workout'>
-            
+        
         </div>
     );
 }
