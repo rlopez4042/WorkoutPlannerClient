@@ -44,9 +44,9 @@ function Form() {
         <div key={index}>
           <h4>{workout.name}</h4>
           <p>{workout.duration}</p>
-          {workout.exercises.map((exercise, index) => {
+          {workout.exercises.map((exercise, i) => {
             return (
-            <div key={index}>
+            <div key={i}>
               <h5>{exercise.name}</h5>
               <p>{exercise.description}</p>
               <ul>
