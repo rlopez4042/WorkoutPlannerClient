@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState} from 'react'
-import Exercise from './exercise'
+import Exercise from './Exercise'
 
 function Form() {
 
