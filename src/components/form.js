@@ -1,18 +1,19 @@
 import React from 'react';
 import {useState} from 'react'
-import ReactDOM from 'react-dom';
+
 
 function Form() {
 
   const [workouts, setWorkouts] = useState([])
-  const [workout, setWorkout] = useState({artist: "", album: ""})
+  const [workout, setWorkout] = useState([])
 
     const handleClick = () => {
       fetch("http://localhost:4000/workout")
         .then(response => response.json())
         .then(data => setWorkouts(data.Workout))
     }
-  
+    console.log(workouts)
+
     const handleChange = (event) => {
         event.persist()
         setWorkout(prevWorkout =>{
@@ -37,11 +38,23 @@ function Form() {
           .then(data => setWorkouts(data.Workout))
           .then(() => setWorkout({name: "", duration: "", exercises:[{name:"", description:"", sets:"", reps:""}]}))
       }
-    const workoutList = workouts.map(workout => {
+
+    const workoutList = workouts.map((workout, index) => {
       return (
-        <div>
-          <p>{workout.name}</p>
+        <div key={index}>
+          <h4>{workout.name}</h4>
           <p>{workout.duration}</p>
+          {workout.exercises.map((exercise, i) => {
+            return (
+            <div key={i}>
+              <h5>{exercise.name}</h5>
+              <p>{exercise.description}</p>
+              <ul>
+                <li>{exercise.reps}</li>
+                <li>{exercise.sets}</li>
+              </ul>
+            </div>
+          )})}
           </div>
       )
     })
@@ -52,14 +65,14 @@ function Form() {
         <input onChange={handleChange} value={workout.name} name="Workout Name" placeholder="Workout Name"/>
         <input onChange={handleChange} value={workout.duration} name="Estimated Time" placeholder="Estimated Time"/>
         {/* <input onChange={handleChange} value={workout.exercises.name} name="Exercise Name" placeholder="Exercise Name"/> */}
-        {/* <input onChange={handleChange} value={workout.exercises.description} name="Exercise Description" placeholder="Exercise Description"/>
-        <input onChange={handleChange} value={workout.exercises.sets} name="Number of sets" placeholder="Number of sets"/>
-        <input onChange={handleChange} value={workout.exercises.reps} name="Number of reps" placeholder="Number of reps"/> */}
+        {/* <input onChange={handleChange} value={workout.exercises.description} name="Exercise Description" placeholder="Exercise Description"/> */}
+        {/* <input onChange={handleChange} value={workout.exercises.sets} name="Number of sets" placeholder="Number of sets"/> */}
+        {/* <input onChange={handleChange} value={workout.exercises.reps} name="Number of reps" placeholder="Number of reps"/> */}
 
-        <button type="Submit">Add Vinyl</button>
+        <button type="Submit">Add Workout</button>
       </form>
       <button onClick={handleClick}>View Workouts</button> 
-      <ul>{workoutList}</ul>
+      {workoutList}
     </>
     );
 }
