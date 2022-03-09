@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState} from 'react'
-
+import Exercise from './exercise'
 
 function Form() {
 
@@ -72,6 +72,7 @@ function Form() {
 
         <button type="Submit">Add Workout</button>
       </form>
+      <Exercise />
       <button onClick={handleClick}>View Workouts</button> 
       {workoutList}
     </>
