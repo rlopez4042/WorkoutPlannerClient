@@ -19,7 +19,7 @@ function Form() {
         console.log("workout: ", workout)
         setWorkout(prevWorkout =>{
           const editedWorkout = {...prevWorkout, [event.target.name]:
-          event.target.value, exercises:[]}
+          event.target.value}
           return editedWorkout
         })
       };

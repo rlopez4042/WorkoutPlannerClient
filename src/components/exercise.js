@@ -19,7 +19,7 @@ function Exercise() {
     const handleExSubmit = event => {
         event.preventDefault()
         console.log("Exercise: ", exercise)
-        fetch("http://localhost:4000/workout/addex/6228461e10fc3c52455d0903", {
+        fetch("http://localhost:4000/workout/addex/6229ac4a373b51490b28cac5", {
             headers: {
               'Content-Type': 'application/json'
             },
