@@ -1,15 +1,15 @@
 import {useState} from 'react'
-
+import ExerciseDetail from './ExerciseDetail'
 
 function Exercise() {
 
     const [exercises, setExercises] = useState([])
     const [exercise, setExercise] = useState({})
+    const [workout, setWorkout] = useState({})
     //name:"", description:"", reps:0, sets:0
 
     const handleChange = (event) => {
         event.persist()
-        console.log("exercise: ", exercise)
         setExercise(prevExercise => {
             const editedExercise = {...prevExercise, [event.target.name]: event.target.value}
             return editedExercise
@@ -18,13 +18,23 @@ function Exercise() {
 
     const handleExSubmit = event => {
         event.preventDefault()
-        setExercises(prevExercises => {
-            const editedExercises = {...prevExercises, [event.target.name]: event.target.value}
-            return editedExercises
-        })
-        console.log("Exercises: ", exercises)
-      
+        console.log("Exercise: ", exercise)
+        fetch("http://localhost:4000/workout/addex/6228461e10fc3c52455d0903", {
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            method: 'PUT',
+            body: JSON.stringify(exercise)
+          })
+            .then(response => response.json())
+            .then(data => {
+                setWorkout(data.workout)
+                console.log("workout: ", workout) 
+                console.log("data.workout: ", data.workout) 
+            })
     }
+
+    console.log("workout-2: ", workout) // but here, the newly added item is shown.
 
     return (
         <div className='exercise'>
@@ -32,10 +42,15 @@ function Exercise() {
             <form onSubmit={handleExSubmit}>
                 <input onChange={handleChange} value={exercises.name} name="name" placeholder="Exercise Name"/>
                 <input onChange={handleChange} value={exercises.description} name="description" placeholder="Exercise Description"/>
-                <input onChange={handleChange} value={exercises.reps} name="Number of reps" placeholder="Number of reps"/>
-                <input onChange={handleChange} value={exercises.sets} name="Number of sets" placeholder="Number of sets"/>
+                <input onChange={handleChange} value={exercises.reps} name="reps" placeholder="Number of reps"/>
+                <input onChange={handleChange} value={exercises.sets} name="sets" placeholder="Number of sets"/>
                 <button type="Submit">Add Exercise</button>
             </form>
+            <div> 
+                <ul>
+                    {workout.name ? ( <ExerciseDetail workout={workout} /> ) : null }
+                </ul>
+            </div>
         </>
         </div>
     );

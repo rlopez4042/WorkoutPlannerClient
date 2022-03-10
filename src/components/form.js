@@ -40,11 +40,16 @@ function Form() {
           .then(() => setWorkout({name: "", duration: "", exercises:[{name:"", description:"", sets:"", reps:""}]}))
       }
 
+      function getWorkout(workoutId) {
+
+      }
+
     const workoutList = workouts.map((workout, index) => {
       return (
         <div key={index}>
           <h4>{workout.name}</h4>
           <p>{workout.duration}</p>
+          <button>Edit Workout</button>
           {workout.exercises.map((exercise, i) => {
             return (
             <div key={i}>
