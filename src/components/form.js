@@ -49,26 +49,26 @@ function Form() {
 
     console.log("workoutToEdit: ", workoutToEdit)
 
-      const workoutList = workouts.map((workout, index) => {
-        return (
-          <div key={index}>
-            <h4>{workout.name}</h4>
-            <p>{workout.duration}</p>
-            <button onClick={editWorkout} value={workout._id}>Edit Workout</button>
-            {workout.exercises.map((exercise, i) => {
-              return (
-              <div key={i}>
-                <h5>{exercise.name}</h5>
-                <ul>
-                  <li>{exercise.description}</li>
-                  <li>{exercise.reps}</li>
-                  <li>{exercise.sets}</li>
-                </ul>
-              </div>
-            )})}
+    const workoutList = workouts.map((workout, index) => {
+      return (
+        <div key={index}>
+          <h4>{workout.name}</h4>
+          <p>{workout.duration}</p>
+          <button onClick={editWorkout} value={workout._id}>Edit Workout</button>
+          {workout.exercises.map((exercise, i) => {
+            return (
+            <div key={i}>
+              <h5>{exercise.name}</h5>
+              <ul>
+                <li>{exercise.description}</li>
+                <li>{exercise.reps}</li>
+                <li>{exercise.sets}</li>
+              </ul>
             </div>
-        )
-      }) 
+          )})}
+          </div>
+      )
+    }) 
 
     return (
         <>
