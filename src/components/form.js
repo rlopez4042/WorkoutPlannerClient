@@ -6,8 +6,8 @@ function Form() {
 
   const [workouts, setWorkouts] = useState([])
   const [workout, setWorkout] = useState({})
-  const [toggleDisplay, setToggleDisplay] = useState(true)
   const [workoutToEdit, setWorkoutToEdit] = useState("")
+  const [workoutToDelete, setWorkoutToDelete] = useState("")
 
     const handleClick = () => {
       fetch("http://localhost:4000/workout")
@@ -47,6 +47,17 @@ function Form() {
       setWorkoutToEdit(event.target.value)
     }  
 
+    function deleteWorkout(event) {
+      //setWorkoutToDelete(event.target.value)
+      fetch(`http://localhost:4000/workout/${event.target.value}`, {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'DELETE',
+      })
+        .then(response => response.json())
+    }
+
     console.log("workoutToEdit: ", workoutToEdit)
 
     const workoutList = workouts.map((workout, index) => {
@@ -55,6 +66,7 @@ function Form() {
           <h4>{workout.name}</h4>
           <p>{workout.duration}</p>
           <button onClick={editWorkout} value={workout._id}>Edit Workout</button>
+          <button onClick={deleteWorkout} value={workout._id}>Delete Workout</button>
           {workout.exercises.map((exercise, i) => {
             return (
             <div key={i}>
