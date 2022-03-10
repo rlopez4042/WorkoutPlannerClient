@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import ExerciseDetail from './ExerciseDetail'
 
 function Exercise() {
 
@@ -28,29 +29,12 @@ function Exercise() {
             .then(response => response.json())
             .then(data => {
                 setWorkout(data.workout)
-                console.log("workout: ", workout) ///// item I just added isn't in the array
-                console.log("data.workout: ", data.workout) ///// ...but it DOES show up here
+                console.log("workout: ", workout) 
+                console.log("data.workout: ", data.workout) 
             })
     }
 
     console.log("workout-2: ", workout) // but here, the newly added item is shown.
-    // let exerciseDetail = []
-    // if(workout.name) {
-    //     exerciseDetail = workout.map((exercise, index) => {
-    //         <>
-    //             <li>exercise.name</li>
-    //             <li>exercise.description</li>
-    //             <li>exercise.reps</li>
-    //             <li>exercise.sets</li>
-    //         </>
-    
-    //     })
-    //     console.log("exerciseDetail: ", exerciseDetail)
-    // }
-    // else {
-    //     exerciseDetail = null
-    //     console.log("you are here.")
-    // } 
 
     return (
         <div className='exercise'>
@@ -64,7 +48,7 @@ function Exercise() {
             </form>
             <div> 
                 <ul>
-                    {/* {exerciseDetail} */}
+                    {workout.name ? ( <ExerciseDetail workout={workout} /> ) : null }
                 </ul>
             </div>
         </>
