@@ -71,16 +71,16 @@ function Form() {
     }) 
 
     return (
-        <>
-    <form onSubmit={handleSubmit}>
-        <input onChange={handleChange} value={workout.name} name="name" placeholder="Workout Name"/>
-        <input onChange={handleChange} value={workout.duration} name="duration" placeholder="Estimated Time"/>
-        <button type="Submit">Add Workout</button>
-      </form>
-      {/* { toggleDisplay ? ( <Exercise /> ) : null  } */}
-      <Exercise workoutId={workoutToEdit}/>
-      <button onClick={handleClick}>View Workouts</button> 
-      {workoutList}
+    <>
+      <form onSubmit={handleSubmit}>
+          <input onChange={handleChange} value={workout.name} name="name" placeholder="Workout Name"/>
+          <input onChange={handleChange} value={workout.duration} name="duration" placeholder="Estimated Time"/>
+          <button type="Submit">Add Workout</button>
+        </form>
+        {/* { toggleDisplay ? ( <Exercise /> ) : null  } */}
+        <Exercise workoutToEdit={workoutToEdit}/>
+        <button onClick={handleClick}>View Workouts</button> 
+        {workoutList}
     </>
     );
 }
