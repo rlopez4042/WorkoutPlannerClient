@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import ExerciseDetail from './ExerciseDetail'
 
-function Exercise() {
+function Exercise({workoutToEdit}) {
 
     const [exercises, setExercises] = useState([])
     const [exercise, setExercise] = useState({})
@@ -16,10 +16,14 @@ function Exercise() {
         })
     }
 
+    // fetch("http://localhost:4000/workout/addex/6229ac4a373b51490b28cac5", {
+
     const handleExSubmit = event => {
         event.preventDefault()
+        console.log(workoutToEdit)
+        console.log(`http://localhost:4000/workout/addex/${workoutToEdit}`)
         console.log("Exercise: ", exercise)
-        fetch("http://localhost:4000/workout/addex/6228461e10fc3c52455d0903", {
+        fetch(`http://localhost:4000/workout/addex/${workoutToEdit}`, {
             headers: {
               'Content-Type': 'application/json'
             },
