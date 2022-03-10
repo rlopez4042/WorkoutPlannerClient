@@ -58,11 +58,11 @@ function Form() {
           {workout.exercises.map((exercise, i) => {
             return (
             <div key={i}>
-              <h5>{exercise.name}</h5>
+              <h5>Exercise {i+1}: {exercise.name}</h5>
               <ul>
-                <li>{exercise.description}</li>
-                <li>{exercise.reps}</li>
-                <li>{exercise.sets}</li>
+                <li><span>Description:</span> {exercise.description}</li>
+                <li><span>Reps:</span> {exercise.reps}</li>
+                <li><span>Sets:</span> {exercise.sets}</li>
               </ul>
             </div>
           )})}

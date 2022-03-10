@@ -6,9 +6,29 @@
   margin: 1px;
 }
 
+main{
+  margin: 0 auto;
+  max-width:900px;
+}
+
 body {
   width: 95vw;
   height: 97vh;
+}
+li, p{
+  list-style:square outside none;
+  font-size:1.5rem;
+  padding-left:2rem;
+}
+
+h5{
+  font-size:1.8rem;
+  color:rgb(235, 66, 66);
+}
+
+h4{
+  font-size:2.5rem;
+  text-decoration: underline;
 }
 
 .App {  
@@ -16,7 +36,9 @@ body {
   /* grid-template-columns: 30% 70%;
   grid-template-rows: 10% 90%; */
 }
-
+span{
+  font-weight: 900;
+}
 /* div {
   border: none;
   width: 100%;
