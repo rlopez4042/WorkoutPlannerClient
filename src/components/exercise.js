@@ -1,6 +1,5 @@
 import {useState} from 'react'
 
-
 function Exercise() {
 
     const [exercises, setExercises] = useState([])
@@ -10,7 +9,6 @@ function Exercise() {
 
     const handleChange = (event) => {
         event.persist()
-        console.log("exercise: ", exercise)
         setExercise(prevExercise => {
             const editedExercise = {...prevExercise, [event.target.name]: event.target.value}
             return editedExercise
@@ -19,12 +17,8 @@ function Exercise() {
 
     const handleExSubmit = event => {
         event.preventDefault()
-        // setExercises(prevExercises => {
-        //     const editedExercises = {...prevExercises, [event.target.name]: event.target.value}
-        //     return editedExercises
-        // })
         console.log("Exercise: ", exercise)
-        fetch("http://localhost:4000/workout/6228461e10fc3c52455d0903", {
+        fetch("http://localhost:4000/workout/addex/6228461e10fc3c52455d0903", {
             headers: {
               'Content-Type': 'application/json'
             },
@@ -32,22 +26,32 @@ function Exercise() {
             body: JSON.stringify(exercise)
           })
             .then(response => response.json())
-            .then((data) => console.log("data", data))
-            // .then(() => setWorkout({name: "", duration: "", exercises:[{name:"", description:"", sets:"", reps:""}]}))
-        console.log("workout: ", workout)
+            .then(data => {
+                setWorkout(data.workout)
+                console.log("workout: ", workout) ///// item I just added isn't in the array
+                console.log("data.workout: ", data.workout) ///// ...but it DOES show up here
+            })
     }
 
-       
-        //   const exerciseDetail = workout.map((exercise, index) => {
-        //         <>
-        //             <li>exercise.name</li>
-        //             <li>exercise.description</li>
-        //             <li>exercise.reps</li>
-        //             <li>exercise.sets</li>
-        //         </>
-       
-        //     })
-        
+    console.log("workout-2: ", workout) // but here, the newly added item is shown.
+    // let exerciseDetail = []
+    // if(workout.name) {
+    //     exerciseDetail = workout.map((exercise, index) => {
+    //         <>
+    //             <li>exercise.name</li>
+    //             <li>exercise.description</li>
+    //             <li>exercise.reps</li>
+    //             <li>exercise.sets</li>
+    //         </>
+    
+    //     })
+    //     console.log("exerciseDetail: ", exerciseDetail)
+    // }
+    // else {
+    //     exerciseDetail = null
+    //     console.log("you are here.")
+    // } 
+
     return (
         <div className='exercise'>
         <>
@@ -59,8 +63,6 @@ function Exercise() {
                 <button type="Submit">Add Exercise</button>
             </form>
             <div> 
-                {/* <h4>{workout.name}</h4>
-                <p>{workout.duration}</p> */}
                 <ul>
                     {/* {exerciseDetail} */}
                 </ul>
