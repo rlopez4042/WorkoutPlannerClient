@@ -6,11 +6,12 @@ function ExerciseDetail({workout}) {
     if(workout) {
         exerciseList = workout.exercises.map((exercise, index) => {
         return (
-            <div key={index}>
-                <li>{exercise.name}</li>
+            <div className="addWorkout" key={index}>
+                {/* <li>{exercise.name}</li>
                 <li>{exercise.description}</li>
                 <li>{exercise.reps}</li>
-                <li>{exercise.sets}</li>
+                <li>{exercise.sets}</li> */}
+                Added workout.
             </div>
         )})
         console.log("exerciseList: ", exerciseList) //returns one 'undefined' for every item in array (number of objects in exerciseList is equal to number of items in workout.exercises array, but they all show 'undefined' in console and therefore don't render )
