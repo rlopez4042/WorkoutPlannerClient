@@ -10,14 +10,14 @@ function App() {
 
   return (
     <div className='App'>
-      <main>
-        <Routes>
+      {/* <main> */}
+      <Routes>
         {/* <Route path='/' element={<Workout/>} /> */}
         {/* <Route path="/exercise" element={<Exercise />} /> */}
-      
+
       </Routes>
-      < Form/>
-      </main>
+      < Form />
+      {/* </main> */}
     </div>
   )
 

@@ -23,7 +23,7 @@ body {
 .results-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
+  gap: var(--padding);
   align-items: flex-start;
 }
 
@@ -32,6 +32,8 @@ body {
   border: 1px solid #777;
   border-radius: .25rem;
   overflow: hidden;
+  padding: 0 var(--padding);
+  margin-right: var(--padding);
 }
 
 .card.card-shadow {
@@ -40,47 +42,59 @@ body {
 }
 
 .card-header {
+  margin-bottom: .5rem;
+  padding: var(--padding);
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.card-title {
   font-size: 1.5rem;
+}
+
+.card-subtitle {
+  font-size: 1.1rem;
+}
+
+.card-subheader {
+  font-size: 1rem;
   margin-bottom: .5rem;
   padding: var(--padding);
   padding-bottom: 0;
 }
 
-.card-header.card-image {
-  overflow: hidden;
-  padding: 0;
+.card-body {
+  font-size: .9rem;
+  /* padding: 0 var(--padding); */
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  gap: var(--padding)
 }
 
-.card-header.card-image  > img {
-  display: block;
-  width: 100%;
-  max-height: 200px;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: center;
-  transition: 200ms transform ease-in-out;
+.card-element {
+  border: none;
+  box-shadow: 0 2px 5px 0 rgba(0, 0,  0, .2);
+  /* margin-right: 1rem; */
 }
 
 .card:hover > .card-header.card-image > img {
   transform: scale(1.025);
 }
 
-.card-body {
-  font-size: .9rem;
-  padding: 0 var(--padding);
-}
-
 .card-footer {
+  display: flex;
   margin-top: 1rem;
   padding: var(--padding);
   padding-top: 0;
+  justify-content: center;
 }
 
 .btn {
   background: var(--color);
   color: white;
   border: none;
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding: .5em .75em;
   border-radius: .25em;
   cursor: pointer;
