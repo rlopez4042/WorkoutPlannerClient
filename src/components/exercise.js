@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ExerciseDetail from './ExerciseDetail'
+import apiUrl from '../apiUrl'
 
 function Exercise({ workoutToEdit }) {
 
@@ -16,14 +17,12 @@ function Exercise({ workoutToEdit }) {
         })
     }
 
-    // fetch("http://localhost:4000/workout/addex/6229ac4a373b51490b28cac5", {
-
     const handleExSubmit = event => {
         event.preventDefault()
         console.log(workoutToEdit)
-        console.log(`http://localhost:4000/workout/addex/${workoutToEdit}`)
+        console.log(`${apiUrl}/workout/addex/${workoutToEdit}`)
         console.log("Exercise: ", exercise)
-        fetch(`http://localhost:4000/workout/addex/${workoutToEdit}`, {
+        fetch(`${apiUrl}/workout/addex/${workoutToEdit}`, {
             headers: {
                 'Content-Type': 'application/json'
             },

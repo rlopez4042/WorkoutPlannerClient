@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react'
 import Exercise from './exercise'
+import apiUrl from '../apiUrl'
 
 function Form() {
 
@@ -10,7 +11,7 @@ function Form() {
   const [workoutToDelete, setWorkoutToDelete] = useState("")
 
   const handleClick = () => {
-    fetch("http://localhost:4000/workout")
+    fetch(`${apiUrl}/workout`)
       .then(response => response.json())
       .then(data => setWorkouts(data.Workout))
   }
@@ -31,14 +32,14 @@ function Form() {
   const handleSubmit = event => {
     event.preventDefault()
     //console.log("workout: ", workout)
-    fetch("http://localhost:4000/workout", {
+    fetch(`${apiUrl}/workout`, {
       headers: {
         'Content-Type': 'application/json'
       },
       method: 'POST',
       body: JSON.stringify(workout)
     })
-      .then(() => fetch("http://localhost:4000/workout"))
+      .then(() => fetch(`${apiUrl}/workout`))
       .then(response => response.json())
       .then(data => setWorkouts(data.Workout))
       .then(() => setWorkout({ name: "", duration: "", exercises: [{ name: "", description: "", sets: "", reps: "" }] }))
@@ -51,7 +52,7 @@ function Form() {
 
   function deleteWorkout(event) {
     //setWorkoutToDelete(event.target.value)
-    fetch(`http://localhost:4000/workout/${event.target.value}`, {
+    fetch(`${apiUrl}/${event.target.value}`, {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -60,7 +61,7 @@ function Form() {
       .then(response => response.json())
   }
 
-  console.log("workoutToEdit: ", workoutToEdit)
+ 
 
   const workoutList = workouts.map((workout, index) => {
     return (
