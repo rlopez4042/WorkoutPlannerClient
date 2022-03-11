@@ -48,10 +48,10 @@ function Exercise({workoutToEdit}) {
                 <input onChange={handleChange} value={exercises.description} name="description" placeholder="Exercise Description"/>
                 <input onChange={handleChange} value={exercises.reps} name="reps" placeholder="Number of reps"/>
                 <input onChange={handleChange} value={exercises.sets} name="sets" placeholder="Number of sets"/>
-                <button type="Submit">Add Exercise</button>
+                <button className='btn' type="Submit">Add Exercise</button >
             </form>
-            <div> 
-                <ul>
+            <div className='card card-shadow '> 
+                <ul className=''>
                     {workout.name ? ( <ExerciseDetail workout={workout} /> ) : null }
                 </ul>
             </div>

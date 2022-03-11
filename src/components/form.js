@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState} from 'react'
-import Exercise from './Exercise'
+import Exercise from './exercise'
 
 function Form() {
 
@@ -65,8 +65,8 @@ function Form() {
         <div key={index}>
           <h4>{workout.name}</h4>
           <p>{workout.duration}</p>
-          <button onClick={editWorkout} value={workout._id}>Edit Workout</button>
-          <button onClick={deleteWorkout} value={workout._id}>Delete Workout</button>
+          <button className='btn' onClick={editWorkout} value={workout._id}>Edit Workout</button>
+          <button className='btn' onClick={deleteWorkout} value={workout._id}>Delete Workout</button>
           {workout.exercises.map((exercise, i) => {
             return (
             <div key={i}>
@@ -87,11 +87,11 @@ function Form() {
       <form onSubmit={handleSubmit}>
           <input onChange={handleChange} value={workout.name} name="name" placeholder="Workout Name"/>
           <input onChange={handleChange} value={workout.duration} name="duration" placeholder="Estimated Time"/>
-          <button type="Submit">Add Workout</button>
+          <button className='btn' type="Submit">Add Workout</button>
         </form>
         {/* { toggleDisplay ? ( <Exercise /> ) : null  } */}
         <Exercise workoutToEdit={workoutToEdit}/>
-        <button onClick={handleClick}>View Workouts</button> 
+        <button className='btn' onClick={handleClick}>View Workouts</button> 
         {workoutList}
     </>
     );

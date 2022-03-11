@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Form from './components/Form'
+import Form from './components/form'
 import { Route, Link, Routes, Navigate } from 'react-router-dom';
-import Workout from './components/Workout'
-import Exercise from './components/Exercise';
+import Workout from './components/workout'
+import Exercise from './components/exercise';
 
 
 
