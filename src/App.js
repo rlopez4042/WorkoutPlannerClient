@@ -9,7 +9,7 @@ import Exercise from './components/exercise';
 function App() {
 
   return (
-    <div className='App'>
+    <div className='App card-container'>
       {/* <main> */}
       <Routes>
         {/* <Route path='/' element={<Workout/>} /> */}

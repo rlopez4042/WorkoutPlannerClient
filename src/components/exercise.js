@@ -44,16 +44,15 @@ function Exercise({ workoutToEdit }) {
         <div className='exercise'>
             <>
                 <form onSubmit={handleExSubmit}>
-                    <input onChange={handleChange} value={exercises.name} name="name" placeholder="Exercise Name" />
-                    <input onChange={handleChange} value={exercises.description} name="description" placeholder="Exercise Description" />
-                    <input onChange={handleChange} value={exercises.reps} name="reps" placeholder="Number of reps" />
-                    <input onChange={handleChange} value={exercises.sets} name="sets" placeholder="Number of sets" />
+                    <input className='form-input' onChange={handleChange} value={exercises.name} name="name" placeholder="Exercise Name" />
+                    <input className='form-input' onChange={handleChange} value={exercises.description} name="description" placeholder="Exercise Description" />
+                    <input className='form-input' onChange={handleChange} value={exercises.reps} name="reps" placeholder="Number of reps" />
+                    <input className='form-input' onChange={handleChange} value={exercises.sets} name="sets" placeholder="Number of sets" />
                     <button className='btn' type="Submit">Add Exercise</button >
                 </form>
                 <div className=''>
-                    <ul className='card card-shadow '>
+                    <div className='card-title center-self'>{workout.name}</div>
                         {workout.name ? (<ExerciseDetail workout={workout} />) : null}
-                    </ul>
                 </div>
             </>
         </div>

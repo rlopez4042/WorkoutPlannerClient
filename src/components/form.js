@@ -76,18 +76,18 @@ function Form() {
                 <div className='exercise card-element' key={i}>
                   <sec className="card-subheader">Exercise {i + 1}: {exercise.name}</sec>
                   <ul>
-                    <li><span className='card-text'>Description:</span> {exercise.description}</li>
-                    <li><span className='card-text'>Reps:</span> {exercise.reps}</li>
-                    <li><span className='card-text'>Sets:</span> {exercise.sets}</li>
+                    <li><span className='card-text'>Description: </span> {exercise.description}</li>
+                    <li><span className='card-text'>Reps: </span> {exercise.reps}</li>
+                    <li><span className='card-text'>Sets: </span> {exercise.sets}</li>
                   </ul>
                 </div>
               )
             })}
           </div>
-            <div className='card-footer'>
+          <div className='card-footer'>
             <button className='btn' onClick={editWorkout} value={workout._id}>Edit Workout</button>
             <button className='btn' onClick={deleteWorkout} value={workout._id}>Delete Workout</button>
-            </div>
+          </div>
         </div>
       </div>
     )
@@ -95,14 +95,17 @@ function Form() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input onChange={handleChange} value={workout.name} name="name" placeholder="Workout Name" />
-        <input onChange={handleChange} value={workout.duration} name="duration" placeholder="Estimated Time" />
-        <button className='btn' type="Submit">Add Workout</button>
-      </form>
-      {/* { toggleDisplay ? ( <Exercise /> ) : null  } */}
-      <Exercise workoutToEdit={workoutToEdit} />
-      <button className='btn' onClick={handleClick}>View Workouts</button>
+      <div className='title'>Workout Planner</div>
+      <div className='card card-shadow form'>
+        <form onSubmit={handleSubmit}>
+          <input className='form-input' onChange={handleChange} value={workout.name} name="name" placeholder="Workout Name" />
+          <input className='form-input' onChange={handleChange} value={workout.duration} name="duration" placeholder="Estimated Time" />
+          <button className='btn' type="Submit">Add Workout</button>
+        </form>
+        {/* { toggleDisplay ? ( <Exercise /> ) : null  } */}
+        <Exercise workoutToEdit={workoutToEdit} />
+        <button className='btn' onClick={handleClick}>View Workouts</button>
+      </div>
       {workoutList}
     </>
   );
