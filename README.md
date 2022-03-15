@@ -130,3 +130,5 @@ Our team decided to mob-program for the majority of the project. We each contrib
 | Workouts by day of the week | Low | 4 |
 | Separate workout types (cardio vs weights) | Low | 3 |
 | Goal reps and sets vs accomplished | Low | 5 |
+
+URL: https://pages.git.generalassemb.ly/placeholder/WorkoutPlannerClient/
