@@ -31,7 +31,6 @@ function Form() {
 
   const handleSubmit = event => {
     event.preventDefault()
-    //console.log("workout: ", workout)
     fetch(`${apiUrl}/workout`, {
       headers: {
         'Content-Type': 'application/json'
@@ -46,7 +45,6 @@ function Form() {
   }
 
   function editWorkout(event) {
-    //console.log("event: ", event.target.value)
     setWorkoutToEdit(event.target.value)
   }
 
@@ -54,7 +52,8 @@ function Form() {
     setWorkoutToDelete(event.target.value)
     fetch(`${apiUrl}/${event.target.value}`, {
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
       method: 'DELETE',
     })

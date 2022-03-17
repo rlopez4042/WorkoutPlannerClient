@@ -16,7 +16,7 @@
 
 
 body {
-  width: 95vw;
+  max-width: 50vw;
   height: 97vh;
 }
 
