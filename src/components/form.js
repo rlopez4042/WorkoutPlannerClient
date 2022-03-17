@@ -51,7 +51,7 @@ function Form() {
   }
 
   function deleteWorkout(event) {
-    //setWorkoutToDelete(event.target.value)
+    setWorkoutToDelete(event.target.value)
     fetch(`${apiUrl}/${event.target.value}`, {
       headers: {
         'Content-Type': 'application/json'
