@@ -16,8 +16,8 @@
 
 
 .body {
-  max-width: 50vw;
-  height: 97vh;
+  max-width: 900px;
+  height: auto;
 }
 
 .title {
