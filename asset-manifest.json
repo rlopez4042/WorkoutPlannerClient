@@ -3,8 +3,8 @@
     "main.css": "/WorkoutPlannerClient/static/css/main.65c03bcf.css",
     "main.js": "/WorkoutPlannerClient/static/js/main.818dc987.js",
     "index.html": "/WorkoutPlannerClient/index.html",
-    "main.65c03bcf.css.map": "/rlopez4042/WorkoutPlannerClient/static/css/main.65c03bcf.css.map",
-    "main.818dc987.js.map": "/rlopez4042/WorkoutPlannerClient/static/js/main.818dc987.js.map"
+    "main.65c03bcf.css.map": "/WorkoutPlannerClient/static/css/main.65c03bcf.css.map",
+    "main.818dc987.js.map": "/WorkoutPlannerClient/static/js/main.818dc987.js.map"
   },
   "entrypoints": [
     "static/css/main.65c03bcf.css",
