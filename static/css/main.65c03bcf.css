@@ -1,2 +1,133 @@
-*{--padding:1rem;--color:#4071bf;--hover:#668dcc;--input:#668dcc;--input-focus:#cc666b;--focus:#bf4046;--outline-color:#000;--outline-hover:#d9eaf2;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;list-style:disc;margin:1px;padding:1px}body{height:97vh;width:95vw}.title{font-size:1.8rem;padding-bottom:.5rem;text-align:center}.form{align-items:center;display:grid;grid-template-rows:auto}.form-input{background:var(--input);border:none;border-radius:.25em;color:#fff;cursor:pointer;font-size:.8rem;font-weight:700;padding:.5em .75em}.form-input:focus{background:var(--input-focus);border:none}.results-grid{grid-gap:var(--padding);align-items:flex-start;display:grid;gap:var(--padding);grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}.card{background:#fff;border:1px solid #777;border-radius:.25rem;margin-bottom:.5rem;overflow:hidden;padding:0 var(--padding)}.card.card-shadow{border:none;box-shadow:0 2px 5px 0 rgba(0,0,0,.2)}.card-header{margin-bottom:.5rem;padding:var(--padding);padding-bottom:0;text-align:center}.card-title{font-size:1.5rem}.center-self{text-align:center}.card-subtitle{font-size:1.1rem}.card-subheader{font-size:1rem;margin-bottom:.5rem;padding-bottom:0;text-align:center;width:98%}.card-body{grid-gap:var(--padding);display:grid;font-size:.9rem;gap:var(--padding);grid-template-columns:50% 50%;grid-template-rows:auto}.card-element{border:none;box-shadow:0 2px 5px 0 rgba(0,0,0,.2)}.card-footer{display:flex;justify-content:center;margin-top:1rem;padding:var(--padding);padding-top:0}.btn{background:var(--color);border-radius:.25em;color:#fff;cursor:pointer;font-size:.8rem;padding:.5em .75em}.btn:hover{background:var(--hover)}.btn:focus{background:var(--focus)}.btn.btn-outline{background:none;border:1px solid var(--outline-color)}.btn.btn-outline:hover,.btn.btn.btn-outline:focus{background:var(--outline-hover)}li,p{list-style:none;padding-left:2rem}
+* {
+  --padding: 1rem;
+  --color: #4071bf;
+  --hover: #668dcc;
+  --input: #668dcc;
+  --input-focus: #cc666b;
+  --focus: #bf4046;
+  --outline-color: #000;
+  --outline-hover: #d9eaf2;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  list-style: disc;
+  margin: 1px;
+  padding: 1px;
+}
+body {
+  height: 97vh;
+  width: 95vw;
+  background-color: #000;
+  color: white;
+}
+.title {
+  font-size: 1.8rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+.form {
+  align-items: center;
+  display: grid;
+  grid-template-rows: auto;
+}
+.form-input {
+  background: var(--input);
+  border: none;
+  border-radius: 0.25em;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.5em 0.75em;
+}
+.form-input:focus {
+  background: var(--input-focus);
+  border: none;
+}
+.results-grid {
+  grid-gap: var(--padding);
+  align-items: flex-start;
+  display: grid;
+  gap: var(--padding);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.card {
+  background: #fff;
+  border: 1px solid #777;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  padding: 0 var(--padding);
+}
+.card.card-shadow {
+  border: none;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.card-header {
+  margin-bottom: 0.5rem;
+  padding: var(--padding);
+  padding-bottom: 0;
+  text-align: center;
+}
+.card-title {
+  font-size: 1.5rem;
+}
+.center-self {
+  text-align: center;
+}
+.card-subtitle {
+  font-size: 1.1rem;
+}
+.card-subheader {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0;
+  text-align: center;
+  width: 98%;
+}
+.card-body {
+  grid-gap: var(--padding);
+  display: grid;
+  font-size: 0.9rem;
+  gap: var(--padding);
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+}
+.card-element {
+  border: none;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.card-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: var(--padding);
+  padding-top: 0;
+}
+.btn {
+  background: var(--color);
+  border-radius: 0.25em;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0.5em 0.75em;
+}
+.btn:hover {
+  background: var(--hover);
+}
+.btn:focus {
+  background: var(--focus);
+}
+.btn.btn-outline {
+  background: none;
+  border: 1px solid var(--outline-color);
+}
+.btn.btn-outline:hover,
+.btn.btn.btn-outline:focus {
+  background: var(--outline-hover);
+}
+li,
+p {
+  list-style: none;
+  padding-left: 2rem;
+}
 /*# sourceMappingURL=main.65c03bcf.css.map*/
