@@ -16,8 +16,7 @@
 body {
   height: 97vh;
   width: 95vw;
-  background-color: #000;
-  color: white;
+  background-color: rgb(80, 219, 238);
 }
 .title {
   font-size: 1.8rem;
