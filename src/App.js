@@ -7,7 +7,7 @@ import Exercise from "./components/exercise";
 function App() {
   return (
     <div className="body">
-      <div className="App card-container">
+      <div className="card-container">
         {/* <main> */}
         <Routes>
           {/* <Route path='/' element={<Workout/>} /> */}
